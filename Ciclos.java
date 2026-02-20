@@ -1,16 +1,21 @@
 
 import javax.swing.JOptionPane;
 
-/* Cuadrado de números hasta que se introduzca un negativo */
+/* Leer un número e indicar si es positivo o negativo. El proceso se repetira hasta que se introduzca un cero */
 public class Ciclos {
 
     public static void main(String[] args) {
-        int numero,cuadrado;
-        numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero: "));
-        while(numero >= 0) {
-            cuadrado = (int)Math.pow(numero, 2);
-            JOptionPane.showMessageDialog(null, "El numero "+numero+" elevado al cuadrado es: "+cuadrado);
-            numero = Integer.parseInt(JOptionPane.showInputDialog("Digite otro numero: "));
+        int numero;
+
+        numero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero: "));
+
+        while(numero != 0) {
+            if(numero > 0) {
+                System.out.println("El número "+numero+" es positivo");
+            } else {
+                System.out.println("El número "+numero+" es negativo");
+            }
+        numero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero: "));
         }
     }
 }
