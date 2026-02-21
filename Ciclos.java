@@ -1,19 +1,17 @@
 
 
-/* Pedir 10 números y escribir la suma total. */
+/* Diseñar un programa que muestre el producto de los 10 primeros números impares. */
 import javax.swing.JOptionPane;
 
 public class Ciclos {
 
     public static void main(String[] args) {
-        int numero, suma = 0;
+        long producto = 1;
 
-        for(int i=1; i<= 10; i++) {
-            numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un número: "));
-
-            suma = suma + numero;
+        for(int i=1; i<= 20; i+=2) {
+            producto = producto + i;
         }
 
-        System.out.println("La suma es: "+suma);
+        System.out.println("El producto es: "+producto);
     }
 }
