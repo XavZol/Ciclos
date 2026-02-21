@@ -1,19 +1,28 @@
 
 
-/* Pedir númmeros hasta que se teclee un 0, mostrar la suma de todos los númmeros introducidos.  */
-
+/* Pedir números hasta que se introduzca uno negativo, y calcular la media.  */
 import javax.swing.JOptionPane;
 
 public class Ciclos {
 
     public static void main(String[] args) {
-        int numero, suma = 0;
+        int numero, elementos = 0, suma = 0;
+        float media;
 
-        do {
-            numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un número: "));
-            suma = suma + numero;
-        } while(numero != 0);
+        numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un número: "));
 
-        System.out.println("La suma es: "+suma);
+        while (numero >= 0) {
+            suma = suma + numero; // Suma Iterativa
+            elementos++; // Aumentamos en 1 elementos 
+
+            numero = Integer.parseInt(JOptionPane.showInputDialog("Digite otro número: "));
+        }
+
+        if (elementos == 0) {
+            System.out.println("Error! La división entre 0 no existe");
+        } else {
+            media = (float) suma/elementos;
+            System.out.println("La media es: "+media);
+        }
     }
 }
