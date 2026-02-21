@@ -1,19 +1,14 @@
 
 
-/* Pedir un número N, y mostrar todos  los números del 1 al N.  */
+/* Escribir todos los números del 100 al 0 de 7 en 7  */
 import javax.swing.JOptionPane;
 
 public class Ciclos {
 
     public static void main(String[] args) {
-        int numero, i;
 
-        numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un número: "));
-
-        i = 1;
-        while(i <= numero) {
+        for(int i=100; i>=0; i-=7) {
             System.out.println(i);
-            i++;
         }
     }
 }
