@@ -1,14 +1,19 @@
 
 
-/* Escribir todos los números del 100 al 0 de 7 en 7  */
+/* Pedir 10 números y escribir la suma total. */
 import javax.swing.JOptionPane;
 
 public class Ciclos {
 
     public static void main(String[] args) {
+        int numero, suma = 0;
 
-        for(int i=100; i>=0; i-=7) {
-            System.out.println(i);
+        for(int i=1; i<= 10; i++) {
+            numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un número: "));
+
+            suma = suma + numero;
         }
+
+        System.out.println("La suma es: "+suma);
     }
 }
