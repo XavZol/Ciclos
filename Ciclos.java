@@ -1,21 +1,25 @@
 
 
-/* Pedir un número y calcular su factorial 5!= 1*2*3*4*5, 7!= 1*2*3*4*5*6*7 */
+/* Pedir 10 sueldos. Mostrar su suma y cuantos hay mayores de $1000 */
 import javax.swing.JOptionPane;
 
 public class Ciclos {
 
     public static void main(String[] args) {
-        int numero;
-        long factorial=1;
+        float sueldo, suma=0;
+        int contador= 0;
 
-        numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un número: "));
+        for(int i=1; i<=10; i++) {
+            sueldo = Float.parseFloat(JOptionPane.showInputDialog("Digite su sueldo: "));
+            
+            if(sueldo > 1000) { //Si el sueldo supera a mil 
+                contador++; //Aumentamos uno a contador
+            }
 
-        // 5! = 1*2*3*4*5
-        for (int i=1; i<= numero; i++ ) {
-            factorial *= i; //multiplicación iterativa
+            suma += sueldo;
         }
 
-        System.out.println("El factorial de "+numero+" es: "+factorial);
+        JOptionPane.showMessageDialog(null,"La suma de todos los sueldos es: $"+suma);
+        JOptionPane.showMessageDialog(null,"Cantidad de sueldos mayores a 1000: "+contador);
     }
 }
