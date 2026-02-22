@@ -1,36 +1,21 @@
 
 
-/* Dadas las edades y alturas de 5 alumnas, mostrar la edad y la estatura media, la cantidad de alumnos
-mayores de 18 años, y la cantidad de alumnos que miden más de 1.75 */
+/*Pide un número (que debe estar entre 0 y 10 ) y mostrar la tabla de multiplicar de dicho número */
 import javax.swing.JOptionPane;
 
 public class Ciclos {
 
     public static void main(String[] args) {
-        int edad, sumaEdad=0, conteoMayor18=0, contadorMayor175=0;
-        float altura, sumaAltura=0, mediaEdad, mediaAltura;
+            int numero;
 
-        for(int i=1; i<=5; i++) {
-            edad = Integer.parseInt(JOptionPane.showInputDialog("Alumno "+i+"\nDigite su edad: "));
-            altura = Float.parseFloat(JOptionPane.showInputDialog("Alumno "+i+"\nDigite su etatura: "));
+            do {
+                numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un número: "));
+            } while(numero<0 || numero>10); 
 
-            sumaEdad += edad;
-            sumaAltura += altura;
+            JOptionPane.showMessageDialog(null, "La tabla de multilplicar del número "+numero+" es: ");
 
-            if(edad > 18) { // Si la edad es mayor a 18
-                conteoMayor18++;
-            }
-            if(altura > 1.75) { // Si la altura es mayor a 1.75
-                contadorMayor175++;
+            for(int i=1; i<=12; i++) {
+                JOptionPane.showMessageDialog(null, numero+" * "+i+" = "+numero*i);
             }
         }
-
-        mediaEdad = (float) sumaEdad/5;
-        mediaAltura = (float) sumaAltura/5;
-
-        JOptionPane.showMessageDialog(null, "La edad Promedio es: "+mediaEdad);
-        JOptionPane.showMessageDialog(null, "La estatura Promedio es: "+mediaAltura);
-        JOptionPane.showMessageDialog(null, "La Cantidad de Alumnos mayores a 18 años es: "+conteoMayor18);
-        JOptionPane.showMessageDialog(null, "La Cantidad de Alumnos que miden más de 1.75m es: "+contadorMayor175);
-    }
 }
